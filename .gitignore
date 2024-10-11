@@ -35,9 +35,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-<<<<<<< HEAD
 
 .terraform.lock.hcl
 .DS_Store
-=======
->>>>>>> 5b2be83 (create the new prometheus and grafana repo)
+
