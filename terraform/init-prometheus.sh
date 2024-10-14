@@ -162,10 +162,11 @@ route:
   receiver: discord
 
 receivers:
-- name: discord
+- name: 'discord'
   discord_configs:
-  - webhook_url:
+  - webhook_url: https://discord.com/api/webhooks/1294560124735586334/y2YwN64HA8sFVZTqSJJ910xhHQ936_IErq0ckaowDmdR8AxJ7eQtyUyvX9eo9bIY-kLq
 EOF
+# under discord_configs block - if need be, add send_resolved: true -> set to false if do not want to receive resolved notifications
 
 chown alertmanager:alertmanager /etc/alertmanager/alertmanager.yml
 
