@@ -36,6 +36,7 @@ chown -R prometheus:prometheus /etc/prometheus/console_libraries
 cat <<EOF | tee /etc/prometheus/prometheus.yml
 global:
   scrape_interval: 10s
+external_labels: 'prometheus'
 
 # Alertmanager configuration
 alerting:
@@ -57,6 +58,15 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9100']
+
+remote_write:
+  - url: https://aps-workspaces.us-east-1.amazonaws.com/workspaces/ws-0914006c-670c-4b2c-8252-d9ab5c0c05a7/api/v1/remote_write
+    queue_config:
+        max_samples_per_send: 1000
+        max_shards: 200
+        capacity: 2500
+    sigv4:
+        region: us-east-1
 EOF
 
 chown prometheus:prometheus /etc/prometheus/prometheus.yml
