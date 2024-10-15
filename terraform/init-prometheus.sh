@@ -59,14 +59,14 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9100']
 
-remote_write:
-  - url: https://aps-workspaces.us-east-1.amazonaws.com/workspaces/ws-0914006c-670c-4b2c-8252-d9ab5c0c05a7/api/v1/remote_write
-    queue_config:
-        max_samples_per_send: 1000
-        max_shards: 200
-        capacity: 2500
-    sigv4:
-        region: us-east-1
+#remote_write:
+#  - url: https://aps-workspaces.us-east-1.amazonaws.com/workspaces/ws-0914006c-670c-4b2c-8252-d9ab5c0c05a7/api/v1/remote_write
+#    queue_config:
+#        max_samples_per_send: 1000
+#        max_shards: 200
+#        capacity: 2500
+#    sigv4:
+#        region: us-east-1
 EOF
 
 chown prometheus:prometheus /etc/prometheus/prometheus.yml
