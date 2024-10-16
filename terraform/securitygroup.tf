@@ -1,6 +1,6 @@
 # Creates a security group that allows us to create 
 # ingress rules allowing traffic for HTTP, HTTPS and SSH protocols from anywhere
-resource "aws_security_group" "azmi1-tf-sg-allow-ssh-http-https" {
+resource "aws_security_group" "lcchua-tf-sg-allow-ssh-http-https" {
   name   = var.sg_name
   vpc_id = data.aws_vpc.vpc_data.id
 
@@ -40,7 +40,7 @@ resource "aws_security_group" "azmi1-tf-sg-allow-ssh-http-https" {
 }
 
 
-resource "aws_security_group" "azmi1-tf-sg-allow-prometheus-grafana" {
+resource "aws_security_group" "lcchua-tf-sg-allow-prometheus-grafana" {
   name   = var.sg_name2
   vpc_id = data.aws_vpc.vpc_data.id
 

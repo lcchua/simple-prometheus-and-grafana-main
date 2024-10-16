@@ -29,7 +29,7 @@ data "aws_ami" "aws_ami_data" {
 data "aws_subnet" "public_subnet_data" {
   filter {
     name   = "tag:Name"
-    values = ["luqman-vpc-tf-module-public-us-east-1a"]
+    values = ["lcchua-vpc-ssh-subnet-public1-us-east-1a"]
 
   }
 }
@@ -37,6 +37,6 @@ data "aws_subnet" "public_subnet_data" {
 data "aws_vpc" "vpc_data" {
   filter {
     name   = "tag:Name"
-    values = ["luqman-vpc-tf-module"]
+    values = ["lcchua-vpc-ssh"]
   }
 }

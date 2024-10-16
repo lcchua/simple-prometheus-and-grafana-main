@@ -6,7 +6,7 @@ module "ec2_instance" {
   ami                         = data.aws_ami.aws_ami_data.id
   instance_type               = var.instance_type
   key_name                    = var.key_name
-  vpc_security_group_ids      = [aws_security_group.azmi1-tf-sg-allow-ssh-http-https.id, aws_security_group.azmi1-tf-sg-allow-prometheus-grafana.id]
+  vpc_security_group_ids      = [aws_security_group.lcchua-tf-sg-allow-ssh-http-https.id, aws_security_group.lcchua-tf-sg-allow-prometheus-grafana.id]
   subnet_id                   = data.aws_subnet.public_subnet_data.id
   associate_public_ip_address = true
   user_data                   = file("init-prometheus.sh")
