@@ -60,6 +60,14 @@ resource "aws_security_group" "lcchua-tf-sg-allow-prometheus-grafana" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  #cloudwatch_exporter
+  ingress {
+    from_port   = 9106
+    to_port     = 9106
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   #alertmanager
   ingress {
     from_port   = 9093

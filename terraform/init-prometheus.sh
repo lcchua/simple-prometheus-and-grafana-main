@@ -50,7 +50,7 @@ rule_files:
   - "memory_thresholds_rules.yml"
 
 scrape_configs:
-  - job_name: 'prometheus'
+  - job_name: 'prometheus_metrics'
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9090']
@@ -58,6 +58,14 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9100']
+  - job_name: 'cloudwatch_exporter_metrics'
+    scrap_ubterval: 5s
+    static_configs:
+      - targets: ['localhost:9106']
+    labels:
+      csp: "AWS"
+      cn: "NTU_CE7"
+      account_id: '255945442255"
 
 #remote_write:
 #  - url: https://aps-workspaces.us-east-1.amazonaws.com/workspaces/ws-0914006c-670c-4b2c-8252-d9ab5c0c05a7/api/v1/remote_write
