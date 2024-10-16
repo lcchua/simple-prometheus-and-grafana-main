@@ -113,7 +113,7 @@ User=node_exporter
 Group=node_exporter
 Type=simple
 ExecStart=/usr/local/bin/node_exporter
-ls -
+
 [Install]
 WantedBy=multi-user.target
 EOF
