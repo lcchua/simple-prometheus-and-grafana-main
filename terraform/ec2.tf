@@ -9,7 +9,7 @@ module "ec2_instance" {
   vpc_security_group_ids      = [aws_security_group.azmi1-tf-sg-allow-ssh-http-https.id, aws_security_group.azmi1-tf-sg-allow-prometheus-grafana.id]
   subnet_id                   = data.aws_subnet.public_subnet_data.id
   associate_public_ip_address = true
-  #user_data                   = file("init-prometheus.sh")
+  user_data                   = file("init-prometheus.sh")
 
   tags = {
     Name = var.ec2_name
